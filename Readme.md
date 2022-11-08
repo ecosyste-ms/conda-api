@@ -1,6 +1,6 @@
 # Conda API
 
-A small service to make it easier for [packages.ecosyste.ms/](https://packages.ecosyste.ms/) to read data about Conda Packages in different channels.
+A small service to make it easier for [packages.ecosyste.ms](https://packages.ecosyste.ms/) to read data about Conda Packages in different channels.
 
 ## Essentials
 
