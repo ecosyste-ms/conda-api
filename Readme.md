@@ -1,6 +1,6 @@
 # Conda API
 
-A small service to make it easier for [Libraries.io](https://libraries.io) to read data about Conda Packages in different channels.
+A small service to make it easier for [packages.ecosyste.ms/](https://packages.ecosyste.ms/) to read data about Conda Packages in different channels.
 
 ## Essentials
 
@@ -16,7 +16,7 @@ A small service to make it easier for [Libraries.io](https://libraries.io) to re
 ## Development
 
 ### Requirements
-* ruby 2.7.5
+* ruby 3.2.1
   * Installing via [RVM](http://rvm.io/) or [rbenv](https://github.com/rbenv/rbenv) is recommended
 * redis
 
@@ -30,4 +30,4 @@ The server should now be running port 9292. This can be verified by going to `ht
 
 ### Tests
 
-Run the unit tests using `rspec` locally or within a built docker container `docker build -t librariesio/conda-api . && docker run -it -e PORT=9292 -p 9292:9292 librariesio/conda-api rspec`.
+Run the unit tests using `rspec` locally or within a built docker container `docker build -t ecosyste-ms/conda-api . && docker run -it -e PORT=9292 -p 9292:9292 ecosyste-ms/conda-api rspec`.
