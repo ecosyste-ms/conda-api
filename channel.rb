@@ -47,7 +47,9 @@ class Channel
     channeldata = HTTParty.get("https://#{@domain}/#{@channel_name}/channeldata.json")["packages"]
     benchmark = Benchmark.measure do
       ARCHES.each do |arch|
-        blob = HTTParty.get("https://#{@domain}/#{@channel_name}/#{arch}/repodata.json")["packages"]
+        resp = HTTParty.get("https://#{@domain}/#{@channel_name}/#{arch}/repodata.json")
+        resp = JSON.parse(resp.parsed_response) if resp.parsed_response.is_a?(String)
+        blob = resp['packages']
         blob.each_key do |key|
           version = blob[key]
           package_name = version["name"]
