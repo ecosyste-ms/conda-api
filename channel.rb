@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require "httparty"
+require "typhoeus"
 require "json"
 require "benchmark"
 
@@ -44,12 +44,15 @@ class Channel
   def retrieve_packages
     packages = {}
     puts "Fetching packages for channel https://#{@domain}/#{@channel_name}..."
-    channeldata = HTTParty.get("https://#{@domain}/#{@channel_name}/channeldata.json")["packages"]
+    channel_resp = Typhoeus.get("https://#{@domain}/#{@channel_name}/channeldata.json")
+    channeldata = JSON.parse(channel_resp.body)["packages"]
+    
     benchmark = Benchmark.measure do
       ARCHES.each do |arch|
-        resp = HTTParty.get("https://#{@domain}/#{@channel_name}/#{arch}/repodata.json")
-        resp = JSON.parse(resp.parsed_response) if resp.parsed_response.is_a?(String)
-        blob = resp['packages']
+        url = "https://#{@domain}/#{@channel_name}/#{arch}/repodata.json"
+        puts "fetcing #{url}"
+        resp = Typhoeus.get(url)
+        blob = JSON.parse(resp.body)['packages']
         blob.each_key do |key|
           version = blob[key]
           package_name = version["name"]
