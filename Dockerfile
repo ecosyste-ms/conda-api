@@ -1,4 +1,4 @@
-FROM ruby:3.1.2-alpine
+FROM ruby:3.1.3-alpine
 RUN apk add --update \
   build-base git curl-dev \
   && rm -rf /var/cache/apk/*
@@ -11,7 +11,10 @@ WORKDIR /usr/src/app
 ENV RACK_ENV production
 
 COPY Gemfile Gemfile.lock /usr/src/app/
-RUN bundle install --without test --jobs 2
+RUN  gem update --system \
+ && bundle config --global frozen 1 \
+ && bundle config set without 'test' \
+ && bundle install --jobs 2
 
 COPY . /usr/src/app
 CMD ["bundle", "exec", "puma", "config.ru"]
