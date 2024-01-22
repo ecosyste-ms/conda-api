@@ -23,7 +23,7 @@ GEM
       ruby2_keywords (~> 0.0.1)
     nio4r (2.7.0)
     parallel (1.24.0)
-    parser (3.3.0.4)
+    parser (3.3.0.5)
       ast (~> 2.4.1)
       racc
     pry (0.14.2)
@@ -33,10 +33,12 @@ GEM
       nio4r (~> 2.0)
     raabro (1.4.0)
     racc (1.7.3)
-    rack (2.2.8)
-    rack-protection (3.2.0)
+    rack (3.0.8)
+    rack-protection (4.0.0)
       base64 (>= 0.1.0)
-      rack (~> 2.2, >= 2.2.4)
+      rack (>= 3.0.0, < 4)
+    rack-session (2.0.0)
+      rack (>= 3.0.0)
     rack-test (2.1.0)
       rack (>= 1.3)
     rainbow (3.1.1)
@@ -73,10 +75,11 @@ GEM
     ruby2_keywords (0.0.5)
     rufus-scheduler (3.9.1)
       fugit (~> 1.1, >= 1.1.6)
-    sinatra (3.2.0)
+    sinatra (4.0.0)
       mustermann (~> 3.0)
-      rack (~> 2.2, >= 2.2.4)
-      rack-protection (= 3.2.0)
+      rack (>= 3.0.0, < 4)
+      rack-protection (= 4.0.0)
+      rack-session (>= 2.0.0, < 3)
       tilt (~> 2.0)
     tilt (2.3.0)
     typhoeus (1.4.1)
@@ -109,4 +112,4 @@ RUBY VERSION
    ruby 3.3.0p185
 
 BUNDLED WITH
-   2.5.4
+   2.5.5
