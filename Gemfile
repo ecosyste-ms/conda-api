@@ -22,4 +22,4 @@ group :development do
   gem "rubocop"
 end
 
-gem "tzinfo-data", "~> 1.2020"
+gem "tzinfo-data", "~> 1.2024"
