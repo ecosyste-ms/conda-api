@@ -2,7 +2,6 @@
 
 require "rack/test"
 require "rspec"
-require "pry"
 
 require "./conda"
 require "./app"

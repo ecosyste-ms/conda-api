@@ -16,10 +16,3 @@ group :test do
   gem "rack-test"
   gem "rspec"
 end
-
-group :development do
-  gem "pry"
-  gem "rubocop"
-end
-
-gem "tzinfo-data", "~> 1.2020"
