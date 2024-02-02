@@ -16,3 +16,5 @@ group :test do
   gem "rack-test"
   gem "rspec"
 end
+
+gem "tzinfo-data", "~> 1.2020"
