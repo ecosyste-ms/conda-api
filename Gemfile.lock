@@ -5,7 +5,7 @@ GEM
     builder (3.2.4)
     concurrent-ruby (1.2.3)
     diff-lcs (1.5.1)
-    et-orbi (1.2.7)
+    et-orbi (1.2.8)
       tzinfo
     ethon (0.16.0)
       ffi (>= 1.15.0)
