@@ -1,4 +1,4 @@
-FROM ruby:3.3.0-alpine
+FROM ruby:3.3.1-alpine
 RUN apk add --update \
   build-base git curl-dev \
   && rm -rf /var/cache/apk/*
