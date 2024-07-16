@@ -11997,7 +11997,7 @@
       "timestamp": 1593558066359,
       "version": "0.1.0"
     },
-    "_libarchive_static_for_cph-3.3.3-hf8de549_0.tar.bz2": {
+    "_libarchive_static_for_cph-3.3.4-hf8de549_0.tar.bz2": {
       "build": "hf8de549_0",
       "build_number": 0,
       "depends": [
@@ -12009,7 +12009,7 @@
       "size": 1278745,
       "subdir": "linux-64",
       "timestamp": 1568316050596,
-      "version": "3.3.3"
+      "version": "3.3.4"
     },
     "_libgcc_mutex-0.1-main.tar.bz2": {
       "build": "main",
