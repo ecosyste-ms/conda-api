@@ -14,7 +14,7 @@ GEM
     fugit (1.11.0)
       et-orbi (~> 1, >= 1.2.11)
       raabro (~> 1.4)
-    mustermann (3.0.0)
+    mustermann (3.0.1)
       ruby2_keywords (~> 0.0.1)
     nio4r (2.7.3)
     puma (6.4.2)
