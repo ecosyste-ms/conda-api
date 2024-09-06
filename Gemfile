@@ -17,4 +17,4 @@ group :test do
   gem "rspec"
 end
 
-gem "tzinfo-data", "~> 1.2020"
+gem "tzinfo-data", "~> 1.2024"
