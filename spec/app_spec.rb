@@ -3,7 +3,7 @@
 describe CondaAPI do
   before do
     allow(Conda.instance).to receive(:reload_all)
-    allow(HTTParty).to receive(:get).and_return(json_load_fixture("pkgs/repodata.json"))
+    allow(Typhoeus).to receive(:get).and_return(json_load_fixture("pkgs/repodata.json"))
   end
 
   it "should show HelloWorld" do
@@ -17,7 +17,7 @@ describe CondaAPI do
     get "/packages"
     expect(last_response).to be_ok
     json = JSON.parse(last_response.body)
-    expect(json.keys.length).to eq 1877
+    expect(json.keys.length).to eq 21022
     expect(json.keys[12]).to eq "absl-py"
   end
 
