@@ -16,7 +16,7 @@ GEM
       raabro (~> 1.4)
     mustermann (3.0.3)
       ruby2_keywords (~> 0.0.1)
-    nio4r (2.7.3)
+    nio4r (2.7.4)
     puma (6.4.3)
       nio4r (~> 2.0)
     raabro (1.4.0)
