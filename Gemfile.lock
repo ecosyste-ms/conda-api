@@ -70,7 +70,7 @@ GEM
       ethon (>= 0.9.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
-    tzinfo-data (1.2024.2)
+    tzinfo-data (1.2025.1)
       tzinfo (>= 1.0.0)
 
 PLATFORMS
@@ -97,7 +97,7 @@ DEPENDENCIES
   rufus-scheduler
   sinatra
   typhoeus
-  tzinfo-data (~> 1.2020)
+  tzinfo-data (~> 1.2025)
 
 CHECKSUMS
   base64 (0.2.0) sha256=0f25e9b21a02a0cc0cea8ef92b2041035d39350946e8789c562b2d1a3da01507
@@ -140,7 +140,7 @@ CHECKSUMS
   tilt (2.5.0) sha256=3c871a9ffb0fd8191944d8bbd776a371ba1eeb683483cecf1b2572b292293b15
   typhoeus (1.4.1) sha256=1c17db8364bd45ab302dc61e460173c3e69835896be88a3df07c206d5c55ef7c
   tzinfo (2.0.6) sha256=8daf828cc77bcf7d63b0e3bdb6caa47e2272dcfaf4fbfe46f8c3a9df087a829b
-  tzinfo-data (1.2024.2) sha256=722822b015d711ad57a8f98e323a6f814585cc497809208e66b588a2d2ee86b3
+  tzinfo-data (1.2025.1) sha256=2d8c1a501a93f26cb2e0a5019c07f1deaef76e99cca3308f5bdcda8e411fdf0b
 
 RUBY VERSION
    ruby 3.4.1p0
