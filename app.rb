@@ -8,12 +8,10 @@ require "rufus-scheduler"
 class CondaAPI < Sinatra::Base
   scheduler = Rufus::Scheduler.new
 
+  set :host_authorization, { permitted_hosts: [] }
+
   configure :production, :development do
     enable :logging
-  end
-
-  configure :production do
-    set :host_authorization, { permitted_hosts: ["conda.ecosyste.ms"] }
   end
 
   get "/" do
