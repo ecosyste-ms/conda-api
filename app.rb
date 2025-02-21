@@ -12,6 +12,10 @@ class CondaAPI < Sinatra::Base
     enable :logging
   end
 
+  configure :production do
+    set :host_authorization, { permitted_hosts: ["conda.ecosyste.ms"] }
+  end
+
   get "/" do
     "Last updated at #{Conda.instance.channels.values.first.timestamp} \n"
   end
