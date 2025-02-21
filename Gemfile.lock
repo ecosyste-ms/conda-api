@@ -143,7 +143,7 @@ CHECKSUMS
   tzinfo-data (1.2025.1) sha256=2d8c1a501a93f26cb2e0a5019c07f1deaef76e99cca3308f5bdcda8e411fdf0b
 
 RUBY VERSION
-   ruby 3.4.1p0
+   ruby 3.4.2p28
 
 BUNDLED WITH
    2.6.3
