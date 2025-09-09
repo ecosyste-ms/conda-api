@@ -29,7 +29,7 @@ GEM
     mustermann (3.0.4)
       ruby2_keywords (~> 0.0.1)
     nio4r (2.7.4)
-    puma (7.0.1)
+    puma (7.0.2)
       nio4r (~> 2.0)
     raabro (1.4.0)
     rack (3.2.1)
@@ -121,7 +121,7 @@ CHECKSUMS
   logger (1.7.0) sha256=196edec7cc44b66cfb40f9755ce11b392f21f7967696af15d274dde7edff0203
   mustermann (3.0.4) sha256=85fadcb6b3c6493a8b511b42426f904b7f27b282835502233dd154daab13aa22
   nio4r (2.7.4) sha256=d95dee68e0bb251b8ff90ac3423a511e3b784124e5db7ff5f4813a220ae73ca9
-  puma (7.0.1) sha256=80f9a1843c9b663471937bd456c821f2c61b40d0389ac793fee0d01ba7ecfbc1
+  puma (7.0.2) sha256=cb419624b3dbd122852ca4d7ced87e40a51c2b08c6166b302c49ef5b3de20c82
   raabro (1.4.0) sha256=d4fa9ff5172391edb92b242eed8be802d1934b1464061ae5e70d80962c5da882
   rack (3.2.1) sha256=30af3f7e5ec21b0d14d822cf24446048dba5f651b617c7e97405b604f20a9e33
   rack-protection (4.1.1) sha256=51a254a5d574a7f0ca4f0672025ce2a5ef7c8c3bd09c431349d683e825d7d16a
@@ -145,4 +145,4 @@ RUBY VERSION
    ruby 3.4.5p51
 
 BUNDLED WITH
-   2.7.1
+   2.7.2
