@@ -16,9 +16,10 @@ class Conda
       "BioConda" => Channel.new("bioconda", "conda.anaconda.org"),
     }
     @lock = Concurrent::ReadWriteLock.new
-    new_packages = all_packages
+    @packages_cache = nil
+    new_packages = compute_all_packages
 
-    @lock.with_write_lock { @packages = new_packages }
+    @lock.with_write_lock { @packages_cache = new_packages }
   end
 
   def packages_by_channel(channel)
@@ -34,10 +35,10 @@ class Conda
   end
 
   def packages
-    @lock.with_read_lock { @packages }
+    @lock.with_read_lock { @packages_cache }
   end
 
-  def all_packages
+  def compute_all_packages
     global_packages = {}
     @channels.each_value do |channel|
       channel.only_one_version_packages.each do |package_name, package|
@@ -67,7 +68,7 @@ class Conda
 
   def reload_all
     @channels.each_value(&:reload)
-    new_packages = all_packages
-    @lock.with_write_lock { @packages = new_packages }
+    new_packages = compute_all_packages
+    @lock.with_write_lock { @packages_cache = new_packages }
   end
 end

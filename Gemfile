@@ -8,8 +8,10 @@ gem "concurrent-ruby"
 gem "foreman"
 gem "typhoeus"
 gem "puma"
+gem "redis"
 gem "rufus-scheduler"
 gem "sinatra"
+gem "oj"
 gem 'rake'
 
 group :test do
