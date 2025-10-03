@@ -2,11 +2,14 @@
 
 require "rack/test"
 require "rspec"
+require "webmock/rspec"
 
 require "./conda"
 require "./app"
 
 ENV["RACK_ENV"] = "test"
+
+WebMock.disable_net_connect!(allow_localhost: true)
 
 module RSpecMixin
   include Rack::Test::Methods
@@ -110,4 +113,53 @@ end
 
 def json_load_fixture(name)
   JSON.parse(load_fixture(name))
+end
+
+def stub_conda_requests
+  # Stub Main channel (repo.anaconda.com/pkgs)
+  stub_request(:get, "https://repo.anaconda.com/pkgs/main/channeldata.json")
+    .to_return(status: 200, body: load_fixture("main/channeldata.json"))
+
+  Channel::ARCHES.each do |arch|
+    stub_request(:get, "https://repo.anaconda.com/pkgs/main/#{arch}/repodata.json")
+      .to_return(status: 200, body: fixture_for_arch("main", arch))
+  end
+
+  # Stub CondaForge channel (conda.anaconda.org)
+  stub_request(:get, "https://conda.anaconda.org/conda-forge/channeldata.json")
+    .to_return(status: 200, body: load_fixture("conda-forge/channeldata.json"))
+
+  Channel::ARCHES.each do |arch|
+    stub_request(:get, "https://conda.anaconda.org/conda-forge/#{arch}/repodata.json")
+      .to_return(status: 200, body: fixture_for_arch("conda-forge", arch))
+  end
+
+  # Stub BioConda channel (conda.anaconda.org)
+  stub_request(:get, "https://conda.anaconda.org/bioconda/channeldata.json")
+    .to_return(status: 200, body: load_fixture("bioconda/channeldata.json"))
+
+  Channel::ARCHES.each do |arch|
+    stub_request(:get, "https://conda.anaconda.org/bioconda/#{arch}/repodata.json")
+      .to_return(status: 200, body: fixture_for_arch("bioconda", arch))
+  end
+end
+
+def fixture_for_arch(channel, arch)
+  # Return specific fixtures for test arches, empty for others
+  case arch
+  when "linux-64"
+    File.exist?(fixture_path("#{channel}/linux-64/repodata.json")) ?
+      load_fixture("#{channel}/linux-64/repodata.json") :
+      empty_repodata(arch)
+  when "noarch"
+    File.exist?(fixture_path("#{channel}/noarch/repodata.json")) ?
+      load_fixture("#{channel}/noarch/repodata.json") :
+      empty_repodata(arch)
+  else
+    empty_repodata(arch)
+  end
+end
+
+def empty_repodata(arch)
+  { info: { subdir: arch }, packages: {} }.to_json
 end

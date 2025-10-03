@@ -1,0 +1,19 @@
+{
+  "info": {
+    "subdir": "linux-64"
+  },
+  "packages": {
+    "numpy-1.24.3-py311.tar.bz2": {
+      "build": "py311",
+      "build_number": 0,
+      "depends": ["python >=3.11"],
+      "license": "BSD-3-Clause",
+      "name": "numpy",
+      "sha256": "abc123",
+      "size": 5000000,
+      "subdir": "linux-64",
+      "timestamp": 1680000000000,
+      "version": "1.24.3"
+    }
+  }
+}

@@ -2,7 +2,6 @@
 
 require "typhoeus"
 require "json"
-require "benchmark"
 
 class Channel
   ARCHES = %w[emscripten-wasm32 freebsd-64 linux-32 linux-64 linux-aarch64 linux-armv6l linux-armv7l linux-ppc64 linux-ppc64le linux-riscv64 linux-s390x noarch osx-64 osx-arm64 wasi-wasm32 win-32 win-64 win-arm64 zos-z].freeze
@@ -43,32 +42,27 @@ class Channel
 
   def retrieve_packages
     packages = {}
-    puts "Fetching packages for channel https://#{@domain}/#{@channel_name}..."
     channel_resp = Typhoeus.get("https://#{@domain}/#{@channel_name}/channeldata.json")
     channeldata = JSON.parse(channel_resp.body)["packages"]
-    
-    benchmark = Benchmark.measure do
-      ARCHES.each do |arch|
-        url = "https://#{@domain}/#{@channel_name}/#{arch}/repodata.json"
-        puts "fetcing #{url}"
-        resp = Typhoeus.get(url)
-        blob = JSON.parse(resp.body)['packages']
-        blob.each_key do |key|
-          version = blob[key]
-          package_name = version["name"]
 
-          unless packages.key?(package_name)
-            package_data = channeldata[package_name]
-            packages[package_name] = base_package(package_data, package_name)
-          end
+    ARCHES.each do |arch|
+      url = "https://#{@domain}/#{@channel_name}/#{arch}/repodata.json"
+      resp = Typhoeus.get(url)
+      blob = JSON.parse(resp.body)['packages']
+      blob.each_key do |key|
+        version = blob[key]
+        package_name = version["name"]
 
-          packages[package_name][:versions] << release_version(key, version)
+        unless packages.key?(package_name)
+          package_data = channeldata[package_name]
+          packages[package_name] = base_package(package_data, package_name)
         end
-      rescue => e
-        puts "Failed to fetch for #{arch} https://#{@domain}/#{@channel_name}/#{arch}/repodata.json"
+
+        packages[package_name][:versions] << release_version(key, version)
       end
+    rescue => e
+      # Skip failed architectures
     end
-    puts "Finished in #{benchmark.real.round(1)} sec: #{packages.to_json.bytesize / 1_000_000}mb of data."
     packages
   end
 

@@ -1,0 +1,19 @@
+{
+  "info": {
+    "subdir": "noarch"
+  },
+  "packages": {
+    "biopython-1.81-py_0.tar.bz2": {
+      "build": "py_0",
+      "build_number": 0,
+      "depends": ["python >=3.7", "numpy"],
+      "license": "BSD-3-Clause",
+      "name": "biopython",
+      "sha256": "jkl012",
+      "size": 3000000,
+      "subdir": "noarch",
+      "timestamp": 1683000000000,
+      "version": "1.81"
+    }
+  }
+}

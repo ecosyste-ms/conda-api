@@ -1,0 +1,11 @@
+{
+  "packages": {
+    "biopython": {
+      "name": "biopython",
+      "home": "https://biopython.org",
+      "license": "BSD-3-Clause",
+      "description": "Tools for biological computation.",
+      "dev_url": "https://github.com/biopython/biopython"
+    }
+  }
+}

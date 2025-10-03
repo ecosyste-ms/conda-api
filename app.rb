@@ -51,8 +51,6 @@ class CondaAPI < Sinatra::Base
   end
 
   scheduler.every "15m" do
-    puts "Reloading packages..."
     Conda.instance.reload_all
-    puts "Reload finished"
   end
 end

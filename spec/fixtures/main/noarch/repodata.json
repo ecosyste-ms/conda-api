@@ -1,0 +1,19 @@
+{
+  "info": {
+    "subdir": "noarch"
+  },
+  "packages": {
+    "pandas-2.0.0-py_0.tar.bz2": {
+      "build": "py_0",
+      "build_number": 0,
+      "depends": ["python >=3.8", "numpy >=1.20"],
+      "license": "BSD-3-Clause",
+      "name": "pandas",
+      "sha256": "def456",
+      "size": 10000000,
+      "subdir": "noarch",
+      "timestamp": 1681000000000,
+      "version": "2.0.0"
+    }
+  }
+}

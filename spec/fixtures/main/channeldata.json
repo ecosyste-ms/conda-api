@@ -1,0 +1,18 @@
+{
+  "packages": {
+    "numpy": {
+      "name": "numpy",
+      "home": "https://numpy.org",
+      "license": "BSD-3-Clause",
+      "description": "NumPy is the fundamental package for array computing with Python.",
+      "dev_url": "https://github.com/numpy/numpy"
+    },
+    "pandas": {
+      "name": "pandas",
+      "home": "https://pandas.pydata.org",
+      "license": "BSD-3-Clause",
+      "description": "Powerful data structures for data analysis.",
+      "dev_url": "https://github.com/pandas-dev/pandas"
+    }
+  }
+}

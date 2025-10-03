@@ -1,0 +1,11 @@
+{
+  "packages": {
+    "numpy": {
+      "name": "numpy",
+      "home": "https://numpy.org",
+      "license": "BSD-3-Clause",
+      "description": "NumPy is the fundamental package for array computing with Python.",
+      "dev_url": "https://github.com/numpy/numpy"
+    }
+  }
+}
