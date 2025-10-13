@@ -1,0 +1,46 @@
+# Git
+.git
+.gitignore
+
+# Documentation
+README.md
+*.md
+
+# Test files
+spec/
+test/
+.rspec
+
+# CI/CD
+.github/
+.gitlab-ci.yml
+
+# Editor and IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+log/
+
+# Temporary files
+tmp/
+*.tmp
+
+# Database dumps
+*.dump
+*.sql
+
+# Data directory
+/data/
+
+# Environment files
+.env
+.env.*
