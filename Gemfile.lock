@@ -29,7 +29,7 @@ GEM
     ffi (1.17.2-x86_64-linux-musl)
     foreman (0.90.0)
       thor (~> 1.4)
-    fugit (1.12.0)
+    fugit (1.12.1)
       et-orbi (~> 1.4)
       raabro (~> 1.4)
     hashdiff (1.2.1)
@@ -146,7 +146,7 @@ CHECKSUMS
   ffi (1.17.2-x86_64-linux-gnu) sha256=05d2026fc9dbb7cfd21a5934559f16293815b7ce0314846fee2ac8efbdb823ea
   ffi (1.17.2-x86_64-linux-musl) sha256=97c0eb3981414309285a64dc4d466bd149e981c279a56371ef811395d68cb95c
   foreman (0.90.0) sha256=ff675e2d47b607ac58714a6d4ac3e1ee8f06f41d8db084531c31961e2c3f117c
-  fugit (1.12.0) sha256=033ddf76b3b0149519be6e53ed83954a4df304b8588bafd48284b2a383ff6503
+  fugit (1.12.1) sha256=5898f478ede9b415f0804e42b8f3fd53f814bd85eebffceebdbc34e1107aaf68
   hashdiff (1.2.1) sha256=9c079dbc513dfc8833ab59c0c2d8f230fa28499cc5efb4b8dd276cf931457cd1
   logger (1.7.0) sha256=196edec7cc44b66cfb40f9755ce11b392f21f7967696af15d274dde7edff0203
   mustermann (3.0.4) sha256=85fadcb6b3c6493a8b511b42426f904b7f27b282835502233dd154daab13aa22
