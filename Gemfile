@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 source "https://rubygems.org"
-ruby '4.0.2'
+ruby '4.0.3'
 
 gem "builder"
 gem "concurrent-ruby"
